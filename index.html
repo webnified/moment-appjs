@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="app.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+      .gallery img {
+          width: 136px;
+      }
+      .home .app-button {
+          display: inline-block;
+          width: 130px;
+          height: 136px !important;
+          font-size: 42px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="app-page home" data-page="home">
+      <div class="app-content">
+        <div class="app-section">
+          <section class="gallery">
+            <div class="row">
+              <div class="app-button" data-target="add-moment"><img src="img/add-moment.png"></div>
+              <div class="app-button" data-target="detail-moment"><img src="img/katya.jpg"></div>
+              </div>
+            <div class="row">
+              <div class="app-button" data-target="detail-moment"><img src="img/kicks.jpg"></div>
+              <div class="app-button" data-target="detail-moment"><img src="img/kicks2.jpg"></div>
+              </div>
+            <div class="row">
+              <div class="app-button" data-target="detail-moment"><img src="img/watch.jpg"></div>
+              <div class="app-button" data-target="detail-moment"><img src="img/shoes.jpg"></div>
+              </div>
+            <div class="row"><img src="img/ibiza.jpg"><img src="img/statue.jpg"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+    
+    <!-- adding moment -->
+    <div class="app-page" data-page="add-moment">
+      <div class="app-topbar">
+        <div class="app-button left" data-back data-autotitle></div>
+        <div class="app-title">adding moment</div>
+      </div>
+      <div class="app-content">
+          <input class="app-input" type="upload" placeholder="image">
+          <input class="app-input" type="text" placeholder="title">
+          <textarea class="app-input" name="message" id="message" placeholder="description"></textarea>
+          <div class="app-button">save moment</div>
+      </div>
+    </div>
+    
+    <!-- moment detail page -->
+    <div class="app-page" data-page="detail-moment">
+      <div class="app-topbar">
+        <div class="app-button left" data-back data-autotitle></div>
+        <div class="app-title">moment</div>
+      </div>
+      <div class="app-content">
+          <img src="img/logo.png" alt="webnified">
+          <textarea class="app-input" name="message" id="message" placeholder="description">I am awesome wohoo! The fox jumps over the lazy lorem ipsum</textarea>
+          <div class="app-button">edit moment</div>
+          <div class="app-button">archive moment</div>
+      </div>
+    </div>
+
+
+    <script src="zepto.js"></script>
+    <script src="app.min.js"></script>
+    <script>
+      App.controller('home', function (page) {
+        // put stuff here
+      });
+
+      App.controller('add-moment', function (page) {
+        // put stuff here
+      });
+
+      try {
+        App.restore();
+      } catch (err) {
+        App.load('home');
+      }
+    </script>
+  </body>
+</html>
